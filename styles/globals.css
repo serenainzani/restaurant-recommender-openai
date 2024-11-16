@@ -1,0 +1,3 @@
+/* @tailwind base;       Tailwind’s base styles (e.g., resets, typography normalization) */
+@tailwind components; /* Pre-designed component classes (e.g., buttons, forms) */
+@tailwind utilities;  /* Utility classes (e.g., margin, padding, flex, grid) */
