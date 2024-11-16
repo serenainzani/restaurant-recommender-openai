@@ -1,12 +1,38 @@
 import Head from "next/head";
 import { useState } from "react";
+import RestaurantInfo from "../components/RestaurantInfo";
 
 export default function Home() {
-    const [recommendations, setRecommentations] = useState();
+    const [recommendations, setRecommentations] = useState([
+        {
+            name: "My Chez",
+            cuisine: "French",
+            location: "Paris",
+            description:
+                "a stylish french resutant in the suburbs serving wine in baby milk",
+        },
+        {
+            name: "My Love",
+            cuisine: "Italian",
+            location: "Paris",
+            description:
+                "Modern pizza rooted in tradtionial techniques and ingredients",
+        },
+        {
+            name: "The One",
+            cuisine: "Fusion",
+            location: "Paris",
+            description: "A unique experience where diners can only sit alone.",
+        },
+    ]);
     const [inputtedText, setInputtedText] = useState("");
+    const [loading, isLoading] = useState(true);
+    const [noQuestionsAsked, isNoQuestionsAsked] = useState(true);
 
     const handleSearch = async (e) => {
         e.preventDefault();
+        isLoading(true);
+        isNoQuestionsAsked(false);
         const aiResponse = await fetch("/api/recommendations", {
             method: "POST", // Use POST for sending a body
             headers: {
@@ -15,7 +41,9 @@ export default function Home() {
             body: JSON.stringify({ inputtedText }), // Send the sentence as JSON
         });
         const aiResponseJson = await aiResponse.json();
+        console.log(aiResponseJson);
         setRecommentations(aiResponseJson.restaurants);
+        isLoading(false);
     };
 
     return (
@@ -26,7 +54,9 @@ export default function Home() {
             </Head>
 
             <main>
-                <h1>Restaurant Recommender with OpenAI</h1>
+                <h1 class="text-yellow-500">
+                    Restaurant Recommender with OpenAI
+                </h1>
                 <form method="post" onSubmit={handleSearch}>
                     <input
                         type="search"
@@ -40,16 +70,16 @@ export default function Home() {
                         Ask AI
                     </button>
                 </form>
-                {recommendations &&
-                    recommendations.map((resturant) => (
-                        <>
-                            <h2>{resturant.name}</h2>
-                            <p>
-                                {resturant.cuisine} ~ {resturant.location}
-                            </p>
-                            <p>{resturant.description}</p>
-                        </>
-                    ))}
+                <div className="flex gap-4 m-7">
+                    {recommendations &&
+                        !noQuestionsAsked &&
+                        recommendations.map((restaurant) => (
+                            <RestaurantInfo
+                                restaurant={restaurant}
+                                isLoading={loading}
+                            />
+                        ))}
+                </div>
             </main>
         </>
     );

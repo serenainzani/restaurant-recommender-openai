@@ -1,0 +1,22 @@
+{
+    "restaurants": [
+        {
+            "name": "My Chez",
+            "cuisine": "French",
+            "location": "Paris",
+            "description": "a stylish french resutant in the suburbs serving wine in baby milk bottles."
+        },
+        {
+            "name": "My Love",
+            "cuisine": "Italian",
+            "location": "Paris",
+            "description": "Modern pizza rooted in tradtionial techniques and ingredients"
+        },
+        {
+            "name": "The One",
+            "cuisine": "Fusion Asian-French",
+            "location": "Paris",
+            "description": "A unique experience where diners can only sit alone at a table as they eat a 7 course set menu."
+        }
+    ]
+}
