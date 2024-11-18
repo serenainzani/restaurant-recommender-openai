@@ -77,7 +77,7 @@ export default function Home() {
                             type="submit"
                             className="bg-pink-600 text-white font-medium h-10 w-24 self-end rounded-l-sm rounded-r-lg"
                         >
-                            Ask AI
+                            Ask AI <span className="text-xl">🤖</span>
                         </button>
                     </div>
                 </form>
