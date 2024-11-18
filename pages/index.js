@@ -36,11 +36,11 @@ export default function Home() {
         isLoading(true);
         isNoQuestionsAsked(false);
         const aiResponse = await fetch("/api/recommendations", {
-            method: "POST", // Use POST for sending a body
+            method: "POST",
             headers: {
-                "Content-Type": "application/json", // Set the content type to JSON
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({ inputtedText }), // Send the sentence as JSON
+            body: JSON.stringify({ inputtedText }),
         });
         const aiResponseJson = await aiResponse.json();
         console.log(aiResponseJson);
