@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import RestaurantInfo from "../components/RestaurantInfo";
+import Input from "../components/Input";
 
 export default function Home() {
     const [recommendations, setRecommentations] = useState([
@@ -53,30 +54,41 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
-                <h1 class="text-yellow-500">
-                    Restaurant Recommender with OpenAI
+            <main className="h-screen bg-gradient-to-b from-slate-950 to-slate-900">
+                <h1 className="text-6xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 inline-block text-transparent bg-clip-text">
+                    Next Eats Reccs
                 </h1>
+
                 <form method="post" onSubmit={handleSearch}>
-                    <input
-                        type="search"
-                        id="site-search"
-                        name="q"
-                        aria-labelledby="ask-ai-button"
-                        onChange={(e) => setInputtedText(e.target.value)}
-                        value={inputtedText}
-                    />
-                    <button id="ask-ai-button" type="submit">
-                        Ask AI
-                    </button>
+                    <div class="flex space-x-1">
+                        <Input
+                            type="search"
+                            label="I want a resturant..."
+                            id="ask-ai-question"
+                            name="ask-ai-question"
+                            aria-labelledby="ask-ai-button"
+                            onChange={(e) => setInputtedText(e.target.value)}
+                            value={inputtedText}
+                            variant="underlined"
+                            className="h-24"
+                        />
+                        <button
+                            id="ask-ai-button"
+                            type="submit"
+                            className="bg-pink-600 text-white font-medium h-10 w-24 self-end rounded-l-sm rounded-r-lg"
+                        >
+                            Ask AI
+                        </button>
+                    </div>
                 </form>
                 <div className="flex gap-4 m-7">
                     {recommendations &&
                         !noQuestionsAsked &&
-                        recommendations.map((restaurant) => (
+                        recommendations.map((restaurant, index) => (
                             <RestaurantInfo
                                 restaurant={restaurant}
                                 isLoading={loading}
+                                key={index}
                             />
                         ))}
                 </div>
