@@ -52,10 +52,14 @@ export default function Home() {
             <Head>
                 <title>Restaurant Recommender with OpenAI</title>
                 <link rel="icon" href="/favicon.ico" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                ></meta>
             </Head>
 
-            <main className="h-screen bg-gradient-to-b from-slate-950 to-slate-900">
-                <h1 className="text-6xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 inline-block text-transparent bg-clip-text">
+            <main className="h-screen cursor-default bg-gradient-to-b from-slate-950 to-slate-900 p-7">
+                <h1 className="pb-5 text-6xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 inline-block text-transparent bg-clip-text">
                     Next Eats Reccs
                 </h1>
 
@@ -75,13 +79,13 @@ export default function Home() {
                         <button
                             id="ask-ai-button"
                             type="submit"
-                            className="bg-pink-600 text-white font-medium h-10 w-24 self-end rounded-l-sm rounded-r-lg"
+                            className="bg-pink-600 text-white font-medium h-10 w-28 self-end rounded-l-sm rounded-r-lg"
                         >
                             Ask AI <span className="text-xl">🤖</span>
                         </button>
                     </div>
                 </form>
-                <div className="flex gap-4 m-7">
+                <div className="flex gap-4 py-7 flex-wrap">
                     {recommendations &&
                         !noQuestionsAsked &&
                         recommendations.map((restaurant, index) => (

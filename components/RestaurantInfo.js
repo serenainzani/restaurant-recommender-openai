@@ -11,7 +11,7 @@ import {
 export default function RestaurantInfo({ restaurant, isLoading }) {
     return (
         <div className="flex flex-col gap-3">
-            <Card className="w-[200px] space-y-5 p-3" radius="md" isBlurred>
+            <Card className="sm:w-60 space-y-5 p-3 " radius="md" isBlurred>
                 <div className="space-y-3">
                     <Skeleton
                         isLoaded={!isLoading}
