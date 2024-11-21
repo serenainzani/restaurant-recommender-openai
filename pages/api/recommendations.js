@@ -1,6 +1,6 @@
 import OpenAI from "openai/index.mjs";
 import dotenv from "dotenv";
-import { zodResponseFormat } from "openai/helpers/zod.mjs";
+import { zodResponseFormat } from "openai/helpers/zod";
 import { z } from "zod";
 
 dotenv.config({ path: ".env.local" });
@@ -40,4 +40,31 @@ export default async function makeAIRecommendation(req, res) {
     const response = completion.choices[0].message.content;
     const jsonResponse = JSON.parse(response);
     res.status(200).json(jsonResponse);
+    // setTimeout(() => {
+    //     res.status(200).json({
+    //         restaurants: [
+    //             {
+    //                 name: "My Chez",
+    //                 cuisine: "French",
+    //                 location: "Paris",
+    //                 description:
+    //                     "a stylish french resutant in the suburbs serving wine in baby milk",
+    //             },
+    //             {
+    //                 name: "My Love",
+    //                 cuisine: "Italian",
+    //                 location: "Paris",
+    //                 description:
+    //                     "Modern pizza rooted in tradtionial techniques and ingredients",
+    //             },
+    //             {
+    //                 name: "The One",
+    //                 cuisine: "Fusion",
+    //                 location: "Paris",
+    //                 description:
+    //                     "A unique experience where diners can only sit alone.",
+    //             },
+    //         ],
+    //     });
+    // }, 3000);
 }
