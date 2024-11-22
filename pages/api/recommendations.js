@@ -1,4 +1,4 @@
-import OpenAI from "openai/index.mjs";
+import OpenAI from "openai";
 import dotenv from "dotenv";
 import { zodResponseFormat } from "openai/helpers/zod";
 import { z } from "zod";
