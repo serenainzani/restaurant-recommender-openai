@@ -5,20 +5,20 @@ import Input from "../components/Input";
 import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
 
 export default function Home() {
-    const [recommendations, setRecommentations] = useState([
+    const [recommendations, setRecommendations] = useState([
         {
             name: "My Chez",
             cuisine: "French",
             location: "Paris",
             description:
-                "a stylish french resutant in the suburbs serving wine in baby milk",
+                "a stylish french restaurant in the suburbs serving wine in baby milk",
         },
         {
             name: "My Love",
             cuisine: "Italian",
             location: "Paris",
             description:
-                "Modern pizza rooted in tradtionial techniques and ingredients",
+                "Modern pizza rooted in traditional techniques and ingredients",
         },
         {
             name: "The One",
@@ -44,7 +44,7 @@ export default function Home() {
         });
         const aiResponseJson = await aiResponse.json();
         console.log(aiResponseJson);
-        setRecommentations(aiResponseJson.restaurants);
+        setRecommendations(aiResponseJson.restaurants);
         isLoading(false);
     };
 
@@ -63,13 +63,17 @@ export default function Home() {
                 <h1 className="pb-5 text-6xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 inline-block text-transparent bg-clip-text">
                     Next Eats Reccs
                 </h1>
+                <subtitle className="pb-5 text-l font-semibold inline-block text-pink-300">
+                    {""}
+                    Find your next favourite restaurant from your AI friend!
+                </subtitle>
 
                 <form method="post" onSubmit={handleSearch}>
                     <div class="flex space-x-1">
                         <div class="relative flex h-20 w-full max-w-sm items-end border-0 border-b-2 focus-within:border-pink-600 transition-colors duration-300">
                             <input
                                 type="text"
-                                placeholder="Reccomend me a restaurant..."
+                                placeholder="Recommend a restaurant..."
                                 id="ask-ai-question"
                                 name="ask-ai-question"
                                 aria-labelledby="ask-ai-button"
@@ -80,7 +84,7 @@ export default function Home() {
                                 class="peer w-full border-0 bg-transparent px-2 py-4 placeholder-transparent focus:outline-none focus:ring-0 text-slate-200"
                             />
                             <label class="top-4 text-sm text-gray-400 pointer-events-none absolute left-2 transition-all peer-placeholder-shown:top-10 sm:peer-placeholder-shown:text-base peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-4 sm:peer-focus:text-sm peer-focus:text-xs peer-focus:text-gray-400">
-                                Recommend a restaurant...
+                                Recommend me...
                             </label>
                         </div>
                         <button
