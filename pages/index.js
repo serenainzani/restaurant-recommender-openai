@@ -59,7 +59,7 @@ export default function Home() {
                 ></meta>
             </Head>
 
-            <main className="h-screen cursor-default bg-gradient-to-b from-slate-950 to-slate-900 p-7">
+            <main className="cursor-default  p-7">
                 <h1 className="pb-5 text-6xl font-bold bg-gradient-to-r from-pink-600 to-pink-400 inline-block text-transparent bg-clip-text">
                     Next Eats Reccs
                 </h1>
@@ -79,21 +79,21 @@ export default function Home() {
                                 value={inputtedText}
                                 class="peer w-full border-0 bg-transparent px-2 py-4 placeholder-transparent focus:outline-none focus:ring-0 text-slate-200"
                             />
-                            <label class="top-4 text-sm text-gray-400 pointer-events-none absolute left-2 transition-all peer-placeholder-shown:top-10 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-4 peer-focus:text-sm peer-focus:text-gray-400">
+                            <label class="top-4 text-sm text-gray-400 pointer-events-none absolute left-2 transition-all peer-placeholder-shown:top-10 sm:peer-placeholder-shown:text-base peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-4 sm:peer-focus:text-sm peer-focus:text-xs peer-focus:text-gray-400">
                                 Reccomend me a resturant...
                             </label>
                         </div>
                         <button
                             id="ask-ai-button"
                             type="submit"
-                            className="bg-pink-600 text-white font-medium h-10 w-28 self-end rounded-l-sm rounded-r-lg"
+                            className="bg-pink-600 text-white font-medium h-10 w-32 self-end rounded-l-sm rounded-r-lg"
                         >
-                            Ask AI <span className="text-xl">🤖</span>
+                            Ask AI <span className="text-l">🤖</span>
                         </button>
                     </div>
                 </form>
                 <div className="pt-6">
-                    <Popover placement="right">
+                    <Popover placement="bottom">
                         <PopoverTrigger>
                             <button
                                 id="ask-ai-button"
