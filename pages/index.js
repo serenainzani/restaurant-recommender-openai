@@ -80,7 +80,7 @@ export default function Home() {
                                 class="peer w-full border-0 bg-transparent px-2 py-4 placeholder-transparent focus:outline-none focus:ring-0 text-slate-200"
                             />
                             <label class="top-4 text-sm text-gray-400 pointer-events-none absolute left-2 transition-all peer-placeholder-shown:top-10 sm:peer-placeholder-shown:text-base peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-4 sm:peer-focus:text-sm peer-focus:text-xs peer-focus:text-gray-400">
-                                Reccomend me a resturant...
+                                Recommend a restaurant...
                             </label>
                         </div>
                         <button
