@@ -90,7 +90,11 @@ export default function Home() {
                         <button
                             id="ask-ai-button"
                             type="submit"
-                            className="bg-pink-600 text-white font-medium h-10 w-32 self-end rounded-l-sm rounded-r-lg"
+                            className={`bg-pink-600 text-white font-medium h-10 w-32 self-end rounded-l-sm rounded-r-lg ${
+                                inputtedText &&
+                                "hover:bg-pink-700 transition duration-200 ease-in-out"
+                            }`}
+                            disabled={!inputtedText}
                         >
                             Ask AI <span className="text-l">🤖</span>
                         </button>
@@ -102,7 +106,7 @@ export default function Home() {
                             <button
                                 id="ask-ai-button"
                                 type="submit"
-                                className="bg-pink-500 text-white font-medium h-10 p-2 self-end rounded-l-md rounded-r-md"
+                                className="bg-pink-500 text-white font-medium h-10 p-2 self-end rounded-l-md rounded-r-md hover:bg-pink-700 transition duration-200 ease-in-out"
                             >
                                 Not sure what to ask?
                             </button>
