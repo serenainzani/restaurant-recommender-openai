@@ -30,6 +30,7 @@ export default function Home() {
     const [inputtedText, setInputtedText] = useState("");
     const [loading, isLoading] = useState(true);
     const [noQuestionsAsked, isNoQuestionsAsked] = useState(true);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -100,36 +101,65 @@ export default function Home() {
                         </button>
                     </div>
                 </form>
-                <div className="pt-6">
-                    <Popover placement="bottom">
-                        <PopoverTrigger>
+                <div>
+                    <p className="text-white underline underline-offset-4 pt-6 pb-4">
+                        <a
+                            className="cursor-pointer pb-1 hover:text-pink-200"
+                            onClick={() => setShowSuggestions(!showSuggestions)}
+                        >
+                            Not sure what to ask?
+                        </a>
+                    </p>
+                    {showSuggestions && (
+                        <div className="flex gap-4 flex-wrap">
                             <button
-                                id="ask-ai-button"
+                                id="suggestion-london"
                                 type="submit"
-                                className="bg-pink-500 text-white font-medium h-10 p-2 self-end rounded-l-md rounded-r-md hover:bg-pink-700 transition duration-200 ease-in-out"
+                                className="bg-pink-600 text-white font-medium self-end rounded-md min-h-16 w-full sm:max-w-72 px-3
+                            hover:bg-pink-700 transition duration-200 ease-in-out"
+                                onClick={(e) => {
+                                    setInputtedText(
+                                        "Best high-end vegan sushi in West London"
+                                    );
+                                    handleSearch(e);
+                                }}
                             >
-                                Not sure what to ask?
+                                Best high-end vegan sushi in West London{" "}
                             </button>
-                        </PopoverTrigger>
-                        <PopoverContent>
-                            <div className="px-1 py-2">
-                                <div className="text-small font-semibold">
-                                    Here are some ideas:
-                                </div>
-                                <div className="text-small">
-                                    <ul>
-                                        <li>💡 Best sushi in London</li>
-                                        <li>💡 Weirdest food in Paris</li>
-                                        <li>
-                                            💡 An affordable date at an indian
-                                            resturant in Edinburgh
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </PopoverContent>
-                    </Popover>
+                            <button
+                                id="suggestion-paris"
+                                type="submit"
+                                className="bg-pink-600 text-white font-medium self-end rounded-md min-h-16 w-full sm:max-w-72 px-3
+                            hover:bg-pink-700 transition duration-200 ease-in-out"
+                                onClick={(e) => {
+                                    setInputtedText(
+                                        "Most unique dining experiences in Paris that are open on Sundays"
+                                    );
+                                    handleSearch(e);
+                                }}
+                            >
+                                Most unique dining experiences in Paris that are
+                                open on Sundays
+                            </button>
+                            <button
+                                id="suggestion-edinburgh"
+                                type="submit"
+                                className="bg-pink-600 text-white font-medium self-end rounded-md min-h-16 w-full sm:max-w-72 px-3
+                            hover:bg-pink-700 transition duration-200 ease-in-out"
+                                onClick={(e) => {
+                                    setInputtedText(
+                                        "An affordable date at an Nepalese restaurant in Edinburgh"
+                                    );
+                                    handleSearch(e);
+                                }}
+                            >
+                                An affordable date at an Nepalese restaurant in
+                                Edinburgh
+                            </button>
+                        </div>
+                    )}
                 </div>
+
                 <div className="flex gap-4 py-7 flex-wrap">
                     {recommendations &&
                         !noQuestionsAsked &&
