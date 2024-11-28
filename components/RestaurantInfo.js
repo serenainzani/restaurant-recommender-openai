@@ -16,7 +16,7 @@ export default function RestaurantInfo({ restaurant, isLoading }) {
                         isLoaded={!isLoading}
                         className="w-3/5 rounded-lg "
                     >
-                        <CardHeader className="h-3 w-full px-3 pt-3 pb-0 rounded-lg font-semibold text-xl">
+                        <CardHeader className="min-h-3 w-full px-3 pt-3 pb-0 rounded-lg font-semibold text-xl">
                             <h2>{restaurant.name}</h2>
                         </CardHeader>
                     </Skeleton>
@@ -25,8 +25,8 @@ export default function RestaurantInfo({ restaurant, isLoading }) {
                         isLoaded={!isLoading}
                         className="w-5/5 rounded-lg"
                     >
-                        <CardBody className="">
-                            <p className="">
+                        <CardBody>
+                            <p>
                                 {restaurant.cuisine} | {restaurant.location}
                             </p>
                             <Divider className="my-2 w-10"></Divider>
