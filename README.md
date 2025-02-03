@@ -24,7 +24,7 @@ You can check out how I want to improve this app on it's [project page](https://
 
 ## How to use this project
 
-### Getting a reccomendation
+### Getting a recommendation
 You can type a request in the the search input, and you will be given 3 resturant reccomendations. Feel free to be creative in the requests, but do include the location/city.
 
 ### OpenAI API
