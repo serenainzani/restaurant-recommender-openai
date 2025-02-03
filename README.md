@@ -3,11 +3,11 @@
 **Check it out here: https://restaurant-recommender-openai.vercel.app/**
 
 <p>
-  <img src="https://img.shields.io/github/last-commit/serenainzani/restaurant-recommender-openai" />
-  <img src="https://img.shields.io/website?url=https%3A%2F%2Frestaurant-recommender-openai.vercel.app%2F" />
+  <a href="https://github.com/serenainzani/restaurant-recommender-openai/commits/main/"><img src="https://img.shields.io/github/last-commit/serenainzani/restaurant-recommender-openai" /></a>
+  <a href="https://restaurant-recommender-openai.vercel.app/"><img src="https://img.shields.io/website?url=https%3A%2F%2Frestaurant-recommender-openai.vercel.app%2F" /></a>
   <img src="https://img.shields.io/github/languages/top/serenainzani/restaurant-recommender-openai" />
-  <img src="https://img.shields.io/github/issues/serenainzani/restaurant-recommender-openai" />
-  <img src="https://img.shields.io/badge/license-GPLv3-orange" />
+  <a href="https://github.com/users/serenainzani/projects/3"><img src="https://img.shields.io/github/issues/serenainzani/restaurant-recommender-openai" /></a>
+  <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://img.shields.io/badge/license-GPLv3-orange" /></a>
   
 </p>
 
